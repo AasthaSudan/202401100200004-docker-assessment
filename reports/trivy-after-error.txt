@@ -1,0 +1,8 @@
+2026-10-28T09:55:18+05:30	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-28T09:55:24+05:30	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize artifact: unable to initialize container image: unable to find the specified image "fest-backend:0.2" in ["docker" "containerd" "podman" "remote"]: 4 errors occurred:
+	* docker error: unable to inspect the image (fest-backend:0.2): Error response from daemon: rpc error: code = Unknown desc = blob sha256:c928d5e98e56730a23ad46bd770b388317af40ae099b3a63dcd63614bcf2e346 expected at /var/lib/desktop-containerd/daemon/io.containerd.content.v1.content/blobs/sha256/c928d5e98e56730a23ad46bd770b388317af40ae099b3a63dcd63614bcf2e346: open /var/lib/desktop-containerd/daemon/io.containerd.content.v1.content/blobs/sha256/c928d5e98e56730a23ad46bd770b388317af40ae099b3a63dcd63614bcf2e346: input/output error
+	* containerd error: containerd socket not found: /run/containerd/containerd.sock
+	* podman error: unable to initialize Podman client: no podman socket found: stat podman/podman.sock: no such file or directory
+	* remote error: GET https://index.docker.io/v2/library/fest-backend/manifests/0.2: UNAUTHORIZED: authentication required; [map[Action:pull Class: Name:library/fest-backend Type:repository]]
+
+

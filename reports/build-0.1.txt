@@ -1,0 +1,46 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 199B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.9
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.9
+#2 DONE 3.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 99B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 2.87kB done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+#6 resolve docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913 0.0s done
+#6 DONE 183.8s
+
+#6 [1/5] FROM docker.io/library/python:3.9@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+#6 extracting sha256:e2f695ddffd81064f15ea19428e2d643e8b560e48e54ae801a8d63c45ad6ac29
+#6 extracting sha256:e2f695ddffd81064f15ea19428e2d643e8b560e48e54ae801a8d63c45ad6ac29 11.6s done
+#6 DONE 195.4s
+
+#7 [2/5] WORKDIR /app
+#7 ERROR: write /var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2794/fs/usr/lib/aarch64-linux-gnu/libfftw3.so.3.6.10: input/output error
+------
+ > [2/5] WORKDIR /app:
+------
+Dockerfile:3
+--------------------
+   1 |     FROM python:3.9
+   2 |     
+   3 | >>> WORKDIR /app
+   4 |     
+   5 |     COPY requirements.txt .
+--------------------
+ERROR: failed to build: failed to solve: failed to compute cache key: write /var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/2794/fs/usr/lib/aarch64-linux-gnu/libfftw3.so.3.6.10: input/output error
