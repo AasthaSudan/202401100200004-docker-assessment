@@ -51,7 +51,7 @@ Counts include all findings across targets in each report. Five HIGH findings re
 
 ## Evidence and limitations
 
-Browser evidence is saved in `screenshots/`. Terminal screenshots are still incomplete because native Terminal screen control is blocked and IDE terminal automation timed out. Genuine execution logs are included; these do not replace any screenshots required by the assessment.
+Browser and terminal screenshots are saved in `screenshots/`, named with the assessment evidence codes. The terminal uses the REGNO prompt. Terminal captures review the genuine saved command output with cat/tail, except the isolation/volume/registration commands which are rerun directly. The original execution logs are retained in reports/. This distinction is recorded transparently because a marker may require screenshots of the original commands themselves.
 
 The Mac ran out of disk space during the initial attempt. Rebuildable Gradle cache files were removed and Docker was recovered; earlier failure logs are retained alongside successful retry results. No project files or database volumes were removed for storage cleanup.
 
