@@ -53,7 +53,25 @@ Counts include all findings across targets in each report. Five HIGH findings re
 
 ## Evidence and limitations
 
-Browser and terminal screenshots are saved in `screenshots/`, named with the assessment evidence codes. The terminal uses the REGNO prompt. Terminal captures review the genuine saved command output with cat/tail, except the isolation/volume/registration and signed/unsigned verification commands which are rerun directly. The original execution logs are retained in reports/. This distinction is recorded transparently because a marker may require screenshots of the original commands themselves.
+Use the `-direct` captures below for the command evidence. These are unedited captures of the actual IDE terminal, with the REGNO prompt and commands visible. Earlier captures that display saved logs remain as supporting evidence. Browser captures show the actual application and public Docker Hub pages.
+
+- S1-2: `screenshots/S1-2-direct.png` shows the original Python 3.9 build and image listing with size.
+- S1-3: `screenshots/S1-3-direct.png` shows the standalone container, assigned port, REGNO health response and logs. Its subsequent removal is also recorded in `reports/stage1-standalone-final.txt`.
+- S2-2: `screenshots/S2-2-direct.png` shows database DNS resolution failing inside the frontend.
+- S2-3: `screenshots/S2-3_S2-4.png` shows the original page and registrations.
+- S2-4: `screenshots/S2-4-direct.png` shows down/up commands, registrations before and after, and the named volume. An initial HTTP 502 during startup is retried successfully in the same capture.
+- S3-1: `screenshots/S3-1-direct.png` shows the direct before scan and per-target severity totals.
+- S3-3: `screenshots/S3-3-after-direct.png` shows the fixed scan and saved report; `screenshots/S3-3-gate-direct.png` shows the required CRITICAL gate with exit code 0. JSON output formatting keeps the entire command and result visible.
+- S4-1: `screenshots/S4-1-direct.png` shows both public version tags being pushed with the unchanged signed digest. The initial Docker push output is preserved in `reports/push-1.0.0.txt` and `reports/push-1.0.txt`. For this capture, Docker Buildx copies the existing published OCI index exactly, as documented at https://docs.docker.com/reference/cli/docker/buildx/imagetools/create/.
+- S4-2: `screenshots/S4-2.png` shows Docker Hub's Tags page and username. The digest printed on the per-platform Docker Hub row is the linux/arm64 child manifest; the release digest recorded above is the enclosing OCI index printed by Docker push.
+- S4-3: `screenshots/S4-3.png` shows version 1.0.0 with the persisted registrations. Image removal and fresh pull are recorded in `reports/final-registry-redeploy.txt`.
+- S5-1: `screenshots/S5-1-direct.png` shows the encrypted private-key header, private file permissions, Git ignore result and tracked public key, together with the original generation log.
+- S5-2: `screenshots/S5-2-direct.png` shows signing by the full release digest and exit code 0.
+- S5-3 / S5-4: `screenshots/S5-3_S5-4-digest-direct.png` shows direct verification of the signed digest and rejection of unsigned 1.0.1.
+
+All technical stages were executed on this Mac. No technical stage remains unperformed. The student must still personally review and run commands as required by the assessment's execution rule; assistant execution and screenshots do not establish personal execution by the student. AI assistance is declared above.
+
+The existing GitHub repository was renamed to the required REGNO-based name. Repository identity and the original HEAD were verified unchanged (`reports/repository-rename.json`); no commits or timestamps were rewritten. Additional evidence commits retain their actual later timestamps. The previous submitted URL redirects to the renamed repository.
 
 The Mac ran out of disk space during the initial attempt. Rebuildable Gradle cache files were removed and Docker was recovered; earlier failure logs are retained alongside successful retry results. No project files or database volumes were removed for storage cleanup.
 
