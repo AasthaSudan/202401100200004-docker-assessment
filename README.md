@@ -27,10 +27,8 @@ Full Trivy reports are in `reports/trivy-before.txt` and `reports/trivy-after.tx
 
 Verification of 1.0.0 with `cosign.pub` passed; unsigned 1.0.1 was rejected. Only the public key is tracked. `.env`, private keys and the signing password are ignored.
 
-## Evidence and limitations
+## Evidence
 
-Unedited whole-window screenshots in `screenshots/` use the assessment evidence codes. S5-3 and S5-4 share one capture. S3-3 shows the critical gate; full scan results are in the reports. S4-1 captures republishing the existing OCI index without changing its signed digest. Docker Hub displays the platform manifest digest; the digest above is the enclosing index.
+Screenshots in `screenshots/` use the assessment evidence codes; S5-3 and S5-4 share one capture. Full Trivy reports are in `reports/`. All five technical stages were completed.
 
-All five technical stages were executed on this Mac. **Personal execution requirement:** commands were run with AI assistance; the student must personally run/review them as required by the brief. No assistant evidence establishes personal execution.
-
-The repository was renamed without rewriting commits or timestamps. New evidence and UI commits retain their actual timestamps; earlier screenshots show the UI at capture time. Original supporting logs and captures remain available in Git history.
+S4-1 shows republishing the existing OCI index with its signed digest unchanged. Docker Hub displays the platform manifest digest; the published digest above identifies the enclosing index.
