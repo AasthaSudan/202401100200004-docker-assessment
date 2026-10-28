@@ -1,0 +1,5 @@
+ Container devops-ca2-db-1 Running 
+ Container devops-ca2-backend-1 Running 
+ Container devops-ca2-frontend-1 Running 
+ Container devops-ca2-db-1 Waiting 
+ Container devops-ca2-db-1 Healthy 

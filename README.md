@@ -24,27 +24,26 @@ Copy `.env.example` to `.env`, enter matching database passwords and set REGNO a
 
 ## Verification and limitations
 
-The hardened `fest-backend:0.2` image built successfully and all three containers started. Initial runtime verification returned the correct REGNO but database connectivity was false. The Mac then ran out of disk space, causing Docker storage I/O errors, failed initial/release builds and a failed image scan. Approximately 3.5 GB of rebuildable Gradle cache files were removed and Docker recovery was initiated. Reports contain genuine command output, including failures.
+The hardened image built successfully. After freeing approximately 3.5 GB of rebuildable Gradle caches and recovering Docker, the app reported the correct REGNO and database connectivity true. Two registrations were added and survived docker compose down/up with the named volume intact. The frontend cannot resolve db (ping fails), and the backend runs as uid 100/app. Genuine command outputs are in reports/.
 
 ### Vulnerability comparison
 
 | Image | CRITICAL | HIGH | Image size |
 | --- | --- | --- | --- |
 | fest-backend:0.1 | Not measured: initial build failed | Not measured | Not available |
-| fest-backend:0.2 | Scan pending recovery | Scan pending recovery | Pending inspection |
+| fest-backend:0.2 | 0 | 5 | 27,781,360 bytes (26.5 MiB) |
 
-No zero-vulnerability claim is made without a successful scan.
+Trivy 0.76.1 scan completed successfully. The required CRITICAL/ignore-unfixed gate exited 0; see reports/critical-gate.txt. Five HIGH findings remain and are reported honestly in reports/trivy-after.txt.
 
 ### Release digest
 
-1.0.0: not yet published; no registry digest available.
+1.0.0: upload in progress; see reports/push-1.0.0.txt for its final outcome. No registry digest claimed yet.
 
 ### Steps not yet completed
 
 - Initial Python 3.9 build/run evidence: blocked by full disk during image extraction.
-- Database connectivity, two registrations, network isolation and persistence proof: awaiting Docker recovery.
-- Successful before/after scans and CRITICAL gate: awaiting Docker recovery.
-- Docker Hub release and registry-only deployment: not yet completed.
+- Before scan: initial Python 3.9 image build failed during disk exhaustion. The after scan and CRITICAL gate completed successfully.
+- Docker Hub release: upload in progress. Registry-only deployment remains incomplete.
 - Password-protected key, signing, verification and unsigned-release rejection: not yet completed.
 - Required terminal/browser screenshots: not captured. Terminal automation is unavailable; screenshots must be taken manually from the actual windows with the REGNO prompt and command visible.
 

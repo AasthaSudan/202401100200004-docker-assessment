@@ -1,0 +1,20 @@
+DRIVER    VOLUME NAME
+local     0d8b20736c80a475b447553353aaa41f63f3e41bb02ea545b7111db21b684a79
+local     3a37a4036729b764d5cc97433056a4a8ac8dad2086b26b063c2f3bc1a1f34ebc
+local     4aa59d2bf65df6303d8b5107b5bc186e45833a4d94e9e22d07fcd16a2126fa33
+local     8d8d333837fe4898c2a219b95248c0125412eb0d20f35bfa2b8ac548f2045932
+local     13c10b0446df25668a0448d4dcba2b6c52112fed3d333ee551e5ff9315bc1881
+local     51a6b42f69b9700ea13c474e8d8ca4482969e7a8f2ff24b917750e7627788742
+local     c1a6b50c25f72d571e38f684c8c799441b94d3306ac5441ab11453f13234315f
+local     clothsy-npm-cache
+local     clothsy_db-config
+local     clothsy_db-data
+local     clothsy_deno-cache
+local     clothsy_deno-test-cache
+local     clothsy_storage-data
+local     devops-ca2_db_data
+local     e4cbbcb07c005ef49f3660622612269d0073be81337b68401913aa03ca83982b
+local     e66bec586c286134cf50192cae1b82bead28bfe44805f805636460913eee6848
+local     roadmap-tracker_elastic-data
+local     roadmap-tracker_postgres-data
+local     roadmap-tracker_redis-data
