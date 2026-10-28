@@ -1,11 +1,13 @@
-# FestPass Docker and Container Security Assessment
+# 202401100200004-docker-assessment
+
+FestPass Docker and Container Security Assessment
 
 - Name: Aastha Sudan
 - REGNO: 202401100200004
 - PORT: 8004
 - Docker Hub username: aasthasudan
 - Docker Hub repository: https://hub.docker.com/r/aasthasudan/fest-backend
-- GitHub repository: https://github.com/AasthaSudan/devops-CA2
+- GitHub repository: https://github.com/AasthaSudan/202401100200004-docker-assessment
 - AI tools: Antigravity (Gemini) for initial files/tool setup; OpenAI Codex for review, Docker configuration, dependency upgrades, execution and troubleshooting.
 
 ## Architecture
@@ -40,7 +42,7 @@ Copy `.env.example` to `.env`, enter matching database passwords and set REGNO a
 | Image | CRITICAL | HIGH | Docker disk usage | Image content size |
 | --- | --- | --- | --- | --- |
 | fest-backend:0.1 | 234 | 2249 | 1.61 GB | 401,285,537 bytes |
-| fest-backend:0.2 | 0 | 5 | 118 MB | 27,781,360 bytes |
+| fest-backend:0.2 | 0 | 5 | 118 MB | 27,781,768 bytes |
 
 Counts include all findings across targets in each report. Five HIGH findings remain; the assessment gate specifically requires no fixable CRITICAL findings. Full reports: `reports/trivy-before.txt` and `reports/trivy-after.txt`.
 
