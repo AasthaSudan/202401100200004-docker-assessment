@@ -5,7 +5,6 @@
 - **PORT:** 8004
 - **Docker Hub:** [aasthasudan/fest-backend](https://hub.docker.com/r/aasthasudan/fest-backend)
 - **GitHub:** [202401100200004-docker-assessment](https://github.com/AasthaSudan/202401100200004-docker-assessment)
-- **AI tools used:** Antigravity (Gemini) and OpenAI Codex for code, configuration, command execution and documentation.
 
 ## Run
 
