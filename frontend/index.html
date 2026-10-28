@@ -2,19 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FestPass 2026</title>
 <style>
-body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem
-auto; padding: 0 1rem; }
-#status { padding: 0.5rem; background: #eef2ff; }
+* { box-sizing: border-box; }
+:root { color-scheme: light; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 920px; margin: 64px auto; padding: 0 24px; color: #17293c; background: #f4f6fa; line-height: 1.6; }
+h1 { margin: 0; padding: 36px; border-radius: 20px 20px 0 0; background: #152a43; color: white; font-size: clamp(25px, 4vw, 36px); letter-spacing: -1.2px; line-height: 1.2; }
+#status { margin: 0 0 28px; padding: 18px 36px; border-radius: 0 0 20px 20px; background: #e4edf4; color: #34546a; font: 13px/1.7 ui-monospace, monospace; overflow-wrap: anywhere; }
+form { display: grid; grid-template-columns: 1fr 190px auto; gap: 12px; padding: 28px; border: 1px solid #e0e6ef; border-radius: 16px; background: white; box-shadow: 0 8px 30px #152a4306; }
+input, select, button { min-height: 48px; border-radius: 9px; font: inherit; }
+input, select { width: 100%; min-width: 0; padding: 10px 14px; border: 1px solid #ced7e2; background: #fff; color: #17293c; }
+input:focus, select:focus { outline: 3px solid #bde3df; border-color: #19776d; }
+button { padding: 10px 25px; border: 0; background: #16776c; color: #fff; font-weight: 650; cursor: pointer; }
+button:hover { background: #105e55; }
+button:focus-visible { outline: 3px solid #7bc6bc; outline-offset: 3px; }
+#list { display: grid; gap: 12px; padding: 0; margin: 28px 0; list-style: none; }
+#list li { padding: 20px 24px; border: 1px solid #e0e6ef; border-left: 4px solid #16776c; border-radius: 12px; background: white; font-weight: 500; }
+@media (max-width: 650px) { body { margin: 24px auto; padding: 0 16px; } h1 { padding: 26px 24px; } #status { padding: 16px 24px; } form { grid-template-columns: 1fr; padding: 20px; } }
 </style>
 </head>
 <body>
 <h1>FestPass 2026 registrations</h1>
 <p id="status">Checking the backend…</p>
 <form id="form">
-<input id="name" placeholder="Your name" required>
-<select id="event">
+<input aria-label="Your name" autocomplete="name" id="name" placeholder="Your name" required>
+<select aria-label="Event" id="event">
 <option>Hackathon</option>
 <option>Robo Race</option>
 <option>Tech Quiz</option>

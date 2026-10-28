@@ -1,1 +1,0 @@
-ping: bad address 'db'

@@ -1,3 +1,0 @@
-Error: no signatures found
-error during command execution: no signatures found
-Exit code: 10

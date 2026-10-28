@@ -1,8 +1,0 @@
-{
-  "containerimage.descriptor": {
-    "mediaType": "application/vnd.oci.image.index.v1+json",
-    "digest": "sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace",
-    "size": 856
-  },
-  "image.name": "docker.io/aasthasudan/fest-backend"
-}
