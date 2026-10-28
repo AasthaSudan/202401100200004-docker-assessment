@@ -17,10 +17,7 @@ services:
       retries: 5
 
   backend:
-    image: fest-backend:0.2
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: aasthasudan/fest-backend:1.0.0
     restart: always
     environment:
       DB_HOST: db
@@ -28,7 +25,6 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${POSTGRES_DB:-festpass}
       REGNO: ${REGNO}
-      APP_VERSION: dev
     depends_on:
       db:
         condition: service_healthy

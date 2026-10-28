@@ -1,0 +1,9 @@
+
+Verification for index.docker.io/aasthasudan/fest-backend@sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - Existence of the claims in the transparency log was verified offline
+  - The signatures were verified against the specified public key
+
+[{"critical":{"identity":{"docker-reference":"index.docker.io/aasthasudan/fest-backend@sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace"},"image":{"docker-manifest-digest":"sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace"},"type":"https://sigstore.dev/cosign/sign/v1"},"optional":{}}]
+Exit code: 0

@@ -1,0 +1,15 @@
+Name:      docker.io/aasthasudan/fest-backend:1.0.0
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace
+           
+Manifests: 
+  Name:        docker.io/aasthasudan/fest-backend:1.0.0@sha256:ac1acff5658a3396b1f44b7cf6c30d5d7674a8e7a70dfd7c7de39522b2f9d6d7
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/arm64
+               
+  Name:        docker.io/aasthasudan/fest-backend:1.0.0@sha256:c01d9b2ecd45df3e8c5985fa774745a0c141157dd1603f35992932616dd66fb6
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:ac1acff5658a3396b1f44b7cf6c30d5d7674a8e7a70dfd7c7de39522b2f9d6d7
+    vnd.docker.reference.type:   attestation-manifest

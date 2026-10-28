@@ -1,0 +1,23 @@
+ Container devops-ca2-frontend-1 Stopping 
+ Container devops-ca2-frontend-1 Stopped 
+ Container devops-ca2-frontend-1 Removing 
+ Container devops-ca2-frontend-1 Removed 
+ Container devops-ca2-backend-1 Stopping 
+ Container devops-ca2-backend-1 Stopped 
+ Container devops-ca2-backend-1 Removing 
+ Container devops-ca2-backend-1 Removed 
+ Container devops-ca2-db-1 Stopping 
+ Container devops-ca2-db-1 Stopped 
+ Container devops-ca2-db-1 Removing 
+ Container devops-ca2-db-1 Removed 
+ Network devops-ca2_backend-net Removing 
+ Network devops-ca2_frontend-net Removing 
+ Network devops-ca2_backend-net Removed 
+ Network devops-ca2_frontend-net Removed 
+9ff31323e6244b9eadbef6840b8c599cb2b3e2a36a01af39829b43d3a7cbcad3
+CONTAINER ID   IMAGE              COMMAND           CREATED                  STATUS                  PORTS                                         NAMES
+9ff31323e624   fest-backend:0.1   "python app.py"   Less than a second ago   Up Less than a second   0.0.0.0:8004->5000/tcp, [::]:8004->5000/tcp   backend
+backend
+IMAGE              ID             DISK USAGE   CONTENT SIZE   EXTRA
+fest-backend:0.1   6bfcd10cdd1c       1.61GB          401MB        
+fest-backend:0.2   c928d5e98e56        118MB         27.8MB        

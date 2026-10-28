@@ -18,33 +18,41 @@ The initial Python 3.9 Dockerfile and original library versions are retained in 
 
 Dependency references: [Flask](https://pypi.org/project/Flask/3.1.3/), [Werkzeug](https://pypi.org/project/Werkzeug/), [psycopg2-binary](https://pypi.org/project/psycopg2-binary/).
 
-## Run locally
+## Run the signed release
 
-Copy `.env.example` to `.env`, enter matching database passwords and set REGNO and PORT. Run `docker compose up -d --build`, then open http://localhost:8004.
+Copy `.env.example` to `.env`, enter matching database passwords and set REGNO and PORT. Run `docker compose up -d`, then open http://localhost:8004. Compose deploys `aasthasudan/fest-backend:1.0.0` from Docker Hub. The release contains APP_VERSION=1.0.0.
 
-## Verification and limitations
+## Verified results
 
-The hardened image built successfully. After freeing approximately 3.5 GB of rebuildable Gradle caches and recovering Docker, the app reported the correct REGNO and database connectivity true. Two registrations were added and survived docker compose down/up with the named volume intact. The frontend cannot resolve db (ping fails), and the backend runs as uid 100/app. Genuine command outputs are in reports/.
+- Original `fest-backend:0.1` built from the first Git commit after disk recovery.
+- All three services run; the database is connected and REGNO is correct.
+- Two registrations survived `docker compose down` followed by `up -d`.
+- The frontend cannot resolve the database service; `ping -c 1 db` fails.
+- The hardened backend runs as uid 100 (`app`).
+- Trivy 0.76.1 scanned both images; the fixed image passed the CRITICAL/ignore-unfixed gate with exit code 0.
+- Public Docker Hub tags 1.0.0 and 1.0 were pushed with the same digest.
+- Version 1.0.0 was signed by digest with a password-protected cosign key; verification with `cosign.pub` exited 0.
+- Version 1.0.1 was built and pushed without signing; cosign rejected it with `no signatures found` and exit code 10.
+- Actual command output is retained in `reports/`.
 
-### Vulnerability comparison
+## Vulnerability comparison
 
-| Image | CRITICAL | HIGH | Image size |
-| --- | --- | --- | --- |
-| fest-backend:0.1 | Not measured: initial build failed | Not measured | Not available |
-| fest-backend:0.2 | 0 | 5 | 27,781,360 bytes (26.5 MiB) |
+| Image | CRITICAL | HIGH | Docker disk usage | Image content size |
+| --- | --- | --- | --- | --- |
+| fest-backend:0.1 | 234 | 2249 | 1.61 GB | 401,285,537 bytes |
+| fest-backend:0.2 | 0 | 5 | 118 MB | 27,781,360 bytes |
 
-Trivy 0.76.1 scan completed successfully. The required CRITICAL/ignore-unfixed gate exited 0; see reports/critical-gate.txt. Five HIGH findings remain and are reported honestly in reports/trivy-after.txt.
+Counts include all findings across targets in each report. Five HIGH findings remain; the assessment gate specifically requires no fixable CRITICAL findings. Full reports: `reports/trivy-before.txt` and `reports/trivy-after.txt`.
 
-### Release digest
+## Published digests
 
-1.0.0: upload in progress; see reports/push-1.0.0.txt for its final outcome. No registry digest claimed yet.
+- Signed 1.0.0 and 1.0: `sha256:ea6b003525490643cfd8ddb02d4680a868f69faf6899521edfda444a917acace`
+- Unsigned 1.0.1: `sha256:fba9acf3b1079042ca866aac962069c66518e23ebfff02076d6140967633ba56`
 
-### Steps not yet completed
+## Evidence and limitations
 
-- Initial Python 3.9 build/run evidence: blocked by full disk during image extraction.
-- Before scan: initial Python 3.9 image build failed during disk exhaustion. The after scan and CRITICAL gate completed successfully.
-- Docker Hub release: upload in progress. Registry-only deployment remains incomplete.
-- Password-protected key, signing, verification and unsigned-release rejection: not yet completed.
-- Required terminal/browser screenshots: not captured. Terminal automation is unavailable; screenshots must be taken manually from the actual windows with the REGNO prompt and command visible.
+Browser evidence is saved in `screenshots/`. Terminal screenshots are still incomplete because native Terminal screen control is blocked and IDE terminal automation timed out. Genuine execution logs are included; these do not replace any screenshots required by the assessment.
 
-Private `.env`, `*.key` files and `.cosign-password` are ignored by Git. Do not publish those files.
+The Mac ran out of disk space during the initial attempt. Rebuildable Gradle cache files were removed and Docker was recovered; earlier failure logs are retained alongside successful retry results. No project files or database volumes were removed for storage cleanup.
+
+Private `.env`, `*.key` files and `.cosign-password` are ignored by Git. The signing password is stored only in the ignored local `.cosign-password` file. Only the public key is committed.

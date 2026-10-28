@@ -1,0 +1,14 @@
+18c562b7310fa1d5b201920e17ac66594d3ae0a59d83a9bc6299d08b9cad4f9b
+CONTAINER ID   IMAGE              COMMAND           CREATED                  STATUS                  PORTS                                         NAMES
+18c562b7310f   fest-backend:0.1   "python app.py"   Less than a second ago   Up Less than a second   0.0.0.0:8004->5000/tcp, [::]:8004->5000/tcp   backend
+curl: (56) Recv failure: Connection reset by peer
+{"container":"18c562b7310f","database":false,"regno":"202401100200004","service":"festpass-backend","version":"dev"}
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.0.2:5000
+[33mPress CTRL+C to quit[0m
+167.82.48.223 - - [28/Oct/2026 04:39:36] "GET /api/health HTTP/1.1" 200 -
+backend
